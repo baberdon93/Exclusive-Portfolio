@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="script.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "6ZtFdHN6iZeF_E0Wo",
+  });
+})();
+</script>
+  </head>
+  <body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav>
+        <figure>
+          <img
+            id="personal-logo"
+            src="/assets/DB-Logo-For-White-Background-300x228.png"
+            alt=""
+          />
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >About</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Projects</a
+            >
+          </li>
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#" 
+              class="nav__link--anchor 
+              link__hover-effect 
+              link__hover-effect
+              link__hover-effect--black"
+              >Contact</a
+            >
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <a
+              href="#"
+              class="nav__link--anchor 
+              link__hover-effect 
+              link__hover-effect--black">
+              <i class="fas fa-adjust"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+      <header class="header">
+        <div class="container">
+        <div class="header__content">
+          <h1 class="title">Hey</h1>
+          <h1 class="title title--secondary">
+            <span class="text--purple">I'm Donald.</span>
+          </h1>
+          <p class="header__para">
+            I'm a
+            <strong class="text--purple">Frontend Software Engineer</strong>
+            with over a decade of work and life experience. My goal is to build
+            user-friendly web applications that perform responsively and
+            accurately.
+            <br />
+            Here's a bit more
+            <a href="#"> <b class="text--purple" onclick="toggleModal()">about me!</b> </a>
+          </p>
+          <div class="social__list">
+            <a
+              href="https://www.linkedin.com/feed/"
+              class="social__link click"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="" class="social__link click" target="_blank">
+              <i class="fas fa-file-pdf"></i>
+            </a>
+            <a
+              href="https://github.com/baberdon93?"
+              class="social__link click"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      </header>
+      <a href="#">
+        <button class="mail__button click" onclick="toggleModal()">
+          <i class="fas fa-envelope"></i>
+        </button>
+        </a>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>
+
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">Here's a bit about me!</h3>
+          <h5 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h5>
+          <p class="modal__about--para">I am a 30 year old American <span class="text--purple bold--text"> Frontend Software Engineer</span> strongly eager to develop fully functional and responsive websites. 
+            <br> I <span class="text--purple big--text"> LOVE </span> to challenge myself on difficult software engineering problems and <span class="text--purple big--text">will not stop </span>until I succeed.
+          </p>
+          <div class="modal__languages">
+         
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+              <span class="modal__language--name">HTML</span>
+            </figure> 
+         
+          
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
+              <span class="modal__language--name">CSS</span>
+            </figure> 
+         
+         
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="">
+              <span class="modal__language--name">JavaScript</span>
+            </figure> 
+          
+         
+            <figure class="modal__language">
+              <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="">
+              <span class="modal__language--name">React</span>
+            </figure> 
+          
+        </div>
+        </div>
+        <div class="modal__half modal__contact">
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+          <h4 class="modal__title modal__title--contact">
+            Contact me!</h4>
+            <h4 class="modal__sub-title modal__sub-title__contact">
+             I am open to new opportunities!
+            </h4>
+            <form id="contact__form" onsubmit="contact(event)">
+              <div class="form__item">
+                <label class="form__item--label">Name</label>
+                <input class="input" name="user_name" type="text" ></input>
+              </div>
+              <div class="form__item">
+                <label class="form__item--label">E-Mail</label>
+                <input class="input" name="user_email" type="email" ></input>
+              </div>
+              <div class="form__item">
+                <label class="form__item--label">Message</label>
+                <textarea class="input" name="message" type="text" ></textarea>
+              </div>
+              <button id="contact__submit" class="form__submit">Send it my way!</button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+              <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+              Thanks for the message! Looking forward to speaking to you soon!
+            </div>
+        </div>
+        
+      </div>
+
+
+    
+      <img src="assets/semi circle.svg" class="shape shape--0">
+      <img src="assets/circle.svg" class="shape shape--1">
+      <img src="assets/squiggly.svg" class="shape shape--2">
+      <img src="assets/circle.svg" class="shape shape--3">
+      <img src="assets/triangle.svg" class="shape shape--4">
+      <img src="assets/circle.svg" class="shape shape--5">
+      <img src="assets/squiggly.svg" class="shape shape--6">
+      <img src="assets/circle.svg" class="shape shape--7">
+      <img src="assets/semi circle.svg" class="shape shape--8">
+
+
+
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+  Here are some of my <span class="text--purple">projects!</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img class="project__img" src="assets/blinker mockup.png" alt="">
+              <div class="project__wrapper--bg">
+                <div class="project__description">
+                <h3 class="project__description--title">
+                  E Commerce Class Project
+                </h3>
+                <h4 class="project__description--sub-title">
+                  HTML, CSS, JavaScript
+                </h4>
+                <p class="project__description--para">This beginner project taught me the fundamentals of HTML and CSS with just a little bit of JavaScript sprinkled in.</p>
+              <div class="project__description--links">
+                <a class="project__description--link" href="https://www.linkedin.com/feed/" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="project__description--link" href="https://baberdon93.github.io/E-COMMERCE/" target="_blank">
+                  <i class="fas fa-link"></i>
+                </a>
+              </div>
+              </div>
+            </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img class="project__img" src="assets/treact blinker mockup.png" alt="">
+              <div class="project__wrapper--bg">
+                <div class="project__description">
+                <h3 class="project__description--title">
+                  T React Final Project
+                </h3>
+                <h4 class="project__description--sub-title">
+                  HTML, CSS, JavaScript
+                </h4>
+                <p class="project__description--para">This project was to be done with minimal assistance from instructors. I was instructed to the copy the T React landing page 1 for 1 using HTML and CSS knowledge. I also added JavaScript to spice it up a little bit.</p>
+              <div class="project__description--links">
+                <a class="project__description--link" href="https://www.linkedin.com/feed/" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="project__description--link" href="https://baberdon93.github.io/Week-2-Treact/" target="_blank">
+                  <i class="fas fa-link"></i>
+                </a>
+              </div>
+              </div>
+            </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img class="project__img" src="assets/blinker mockup.png" alt="">
+              <div class="project__wrapper--bg">
+                <div class="project__description">
+                <h3 class="project__description--title">
+                  Name of my project
+                </h3>
+                <h4 class="project__description--sub-title">
+                  HTML, CSS, JavaScript
+                </h4>
+                <p class="project__description--para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, quibusdam. Perspiciatis sed praesentium similique veniam, maiores tempore nihil, delectus, eius quasi voluptatum minus corrupti quod reiciendis laboriosam aliquid iure perferendis?</p>
+              <div class="project__description--links">
+                <a class="project__description--link" href="https://www.linkedin.com/feed/" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="project__description--link" href="https://github.com/baberdon93?" target="_blank">
+                  <i class="fas fa-link"></i>
+                </a>
+              </div>
+              </div>
+            </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="conatiner footer__container">
+        <div class="row footer__row">
+        <figure class="footer__logo--social">
+          <img class="footer__img" src="assets/DB-Logo-For-White-Background-300x228.png" alt="">
+          <div class="footer__social--list">
+            <a href="https://github.com/baberdon93?" class="
+            footer__social--link
+            link__hover-effect
+            link__hover-effect--white"
+            >Github</a>
+            <a href="https://www.linkedin.com/in/donald-baber-2b500a178/" class="
+            footer__social--link
+            link__hover-effect
+            link__hover-effect
+            link__hover-effect--white"
+            >LinkedIn</a>
+            <a href="#" class= "
+            footer__social--link
+            link__hover-effect
+            link__hover-effect--white"
+            onclick="toggleModal()"
+            >Contact</a>
+            <a href="#" class="
+            footer__social--link
+            link__hover-effect
+            link__hover-effect--white"
+            >Resume</a>
+          </div>
+          <div class="footer__copyright"><i class="fas fa-copyright">Copyright Donald Baber 2024</i></div>
+        </figure>
+      </div>
+    </div>
+    </footer>
+  </body>
+</html>
