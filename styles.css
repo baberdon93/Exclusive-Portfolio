@@ -747,7 +747,7 @@ third
 */
 
 .shape {
-   position: sticky;
+   position: fixed;
 }
 
 .shape--0 {

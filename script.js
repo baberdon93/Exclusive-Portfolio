@@ -1,6 +1,6 @@
 let isModalOpen = false;
 let contrastToggle = false;
-const scaleFactor = 1 / 20;
+const scaleFactor = 1 / 8;
 
 function moveBackground(event) {
   const shapes = document.querySelectorAll(".shape");
@@ -10,7 +10,7 @@ function moveBackground(event) {
   for (let i = 0; i < shapes.length; i++) {
     const isOdd = i % 2 !== 0;
     const boolInt = isOdd ? -1 : 1;
-    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px)`
+    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px) rotate(${x * boolInt * 2}deg)`
   }
 }
 
